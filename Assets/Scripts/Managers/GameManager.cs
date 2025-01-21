@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // Desactiva todos los minijuegos al inicio
+        foreach (GameObject minigame in minigames)
+        {
+            minigame.SetActive(false);
+        }
+
         StartNextMinigame();
     }
 
@@ -36,7 +42,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void StartNextMinigame()
+    public void StartNextMinigame()
     {
         if (currentMinigameIndex >= 0)
         {
@@ -61,7 +67,7 @@ public class GameManager : MonoBehaviour
         isMinigameActive = true;
     }
 
-    void CompleteMinigame()
+    public void CompleteMinigame()
     {
         isMinigameActive = false;
 
@@ -73,7 +79,7 @@ public class GameManager : MonoBehaviour
         StartNextMinigame();
     }
 
-    void FailMinigame()
+    public void FailMinigame()
     {
         isMinigameActive = false;
         playerLives--;
@@ -88,7 +94,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         // Muestra la pantalla de Game Over si está configurada
         if (gameOverScreen != null)
