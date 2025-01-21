@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842451321378920856}
   m_Layer: 0
-  m_Name: GamePrefab4
+  m_Name: 4-Tapioca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.65
+  m_fontSize: 65.15
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
