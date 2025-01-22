@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float minigameDurationReduction = 1.0f;
     public float minigameDurationMinimum = 4.0f;
     public int minigamesBeforeReduction = 3;
+    public float delayBetweenMinigames = 3.0f;
 
     [Header("Game Settings")]
     public int playerLives = 3;
@@ -139,6 +141,13 @@ public class GameManager : MonoBehaviour
 
         // Actualiza el índice del último minijuego
         lastMinigameIndex = currentMinigameIndex;
+
+        StartCoroutine(StartMinigameAfterDelay(delayBetweenMinigames));
+    }
+
+    private IEnumerator StartMinigameAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
 
         // Activa el siguiente minijuego
         minigames[currentMinigameIndex].SetActive(true);
