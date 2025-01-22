@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shader Graphs_Dither
-  m_Shader: {fileID: -6465566751694194690, guid: eaeb315c41151594982abebb61e83f27,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: eaeb315c41151594982abebb61e83f27, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -38,7 +37,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorRes: 588.17
-    - _DitherSpread: 0.002
+    - _ColorRes: 8
+    - _DitherSpread: 0.1
     m_Colors: []
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
