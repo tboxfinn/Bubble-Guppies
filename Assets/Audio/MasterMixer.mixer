@@ -30,6 +30,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 006bb98afd7ba3945af62fbdba060245
+    name: MasterVol
   - guid: aeea5464546d2294b9f5edc75f7e722d
     name: MusicVol
   - guid: 34895fcb55a99ed47ba3893384ddd024
