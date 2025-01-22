@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     [Header("UI Settings")]
     public GameObject gameOverScreen;
     public GameObject pauseScreen;
+    public GameObject settingsScreen;
     public TMP_Text livesText;
     public TMP_Text timerText;
 
@@ -99,23 +100,27 @@ public class GameManager : MonoBehaviour
             // Inicia el primer minijuego
             StartNextMinigame();
         }
-#endregion
+    #endregion
 
     void Update()
     {
+        if (Input.GetKeyDown(pauseKey))
+        {
+            TogglePause();
+        }
+
         if (currentState == GameState.Playing && isMinigameActive)
         {
-            // Actualiza el temporizador del minijuego usando Time.unscaledDeltaTime
             minigameTimer -= Time.unscaledDeltaTime;
             if (minigameTimer <= 0)
             {
                 FailMinigame();
             }
 
-            // Actualiza el texto del temporizador en la UI con una décima
             timerText.text = minigameTimer.ToString("F1");
         }
     }
+
 
     public void StartNextMinigame()
     {
@@ -235,7 +240,9 @@ public class GameManager : MonoBehaviour
             if (pauseScreen != null)
             {
                 pauseScreen.SetActive(false);
+                settingsScreen.SetActive(false);
             }
+
         }
     }
 
@@ -243,4 +250,18 @@ public class GameManager : MonoBehaviour
     {
         livesText.text = "Lives: " + playerLives;
     }
+
+    public void ResumeGame()
+    {
+        if (currentState == GameState.Paused)
+        {
+            currentState = GameState.Playing;
+            Time.timeScale = gameSpeed;
+            if (pauseScreen != null)
+            {
+                pauseScreen.SetActive(false);
+            }
+        }
+    }
+
 }
