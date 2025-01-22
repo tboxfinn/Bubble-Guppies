@@ -3,11 +3,9 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance { get; private set; }
-
+    public GameManager instance;
     public enum GameState
     {
-        MainMenu,
         Playing,
         Paused,
         GameOver
@@ -18,8 +16,8 @@ public class GameManager : MonoBehaviour
     public float minigameDuration = 10.0f;
     public float minigameSpeedIncrease = 0.1f;
     public float minigameDurationReduction = 1.0f;
-    public int minigamesBeforeReduction = 3;
     public float minigameDurationMinimum = 4.0f;
+    public int minigamesBeforeReduction = 3;
 
     [Header("Game Settings")]
     public int playerLives = 3;
@@ -27,8 +25,12 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Settings")]
     public GameObject gameOverScreen;
+    public GameObject pauseScreen;
     public TMP_Text livesText;
     public TMP_Text timerText;
+
+    [Header("Key Bindings")]
+    public KeyCode pauseKey = KeyCode.Escape;
     
     [SerializeField] private GameState currentState = GameState.Playing;
     [SerializeField] private float minigameTimer;
@@ -37,35 +39,65 @@ public class GameManager : MonoBehaviour
     private int lastMinigameIndex = -1;
     private int minigamesCompleted = 0;
 
-    private void Awake()
-    {
-        // Implementación del patrón singleton
-        if (instance == null)
+#region GameStart
+        void Start()
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // Opcional: Mantener el GameManager entre escenas
+            InitializeGame();
         }
-        else
+    
+        private void InitializeGame()
         {
-            Destroy(gameObject);
+            // Desactiva todos los minijuegos al inicio
+            foreach (GameObject minigame in minigames)
+            {
+                minigame.SetActive(false);
+            }
+    
+            Time.timeScale = gameSpeed; // Ajusta la escala de tiempo global
+            
+            UpdateLivesText();
+    
+            StartNextMinigame();
         }
-
-        // Establece la escala de tiempo inicial
-        Time.timeScale = gameSpeed;
-    }
-
-    void Start()
-    {
-        // Desactiva todos los minijuegos al inicio
-        foreach (GameObject minigame in minigames)
+    
+        public void ResetGame()
         {
-            minigame.SetActive(false);
+            // Restablece las variables del juego a sus valores iniciales
+            playerLives = 3;
+            gameSpeed = 1.0f;
+            minigameDuration = 10.0f;
+            minigamesCompleted = 0;
+            currentMinigameIndex = -1;
+            lastMinigameIndex = -1;
+            isMinigameActive = false;
+            currentState = GameState.Playing;
+    
+            // Desactiva todas las pantallas de UI
+            if (gameOverScreen != null)
+            {
+                gameOverScreen.SetActive(false);
+            }
+            if (pauseScreen != null)
+            {
+                pauseScreen.SetActive(false);
+            }
+    
+            // Desactiva todos los minijuegos
+            foreach (GameObject minigame in minigames)
+            {
+                minigame.SetActive(false);
+            }
+    
+            // Restablece la escala de tiempo
+            Time.timeScale = gameSpeed;
+    
+            // Actualiza la UI
+            UpdateLivesText();
+    
+            // Inicia el primer minijuego
+            StartNextMinigame();
         }
-        
-        UpdateLivesText();
-
-        StartNextMinigame();
-    }
+#endregion
 
     void Update()
     {
@@ -85,6 +117,9 @@ public class GameManager : MonoBehaviour
 
     public void StartNextMinigame()
     {
+        if (currentState != GameState.Playing)
+            return;
+        
         if (currentMinigameIndex >= 0)
         {
             // Desactiva el minijuego anterior y lo reinicia
@@ -118,6 +153,9 @@ public class GameManager : MonoBehaviour
 
     public void CompleteMinigame()
     {
+        if (currentState != GameState.Playing)
+            return;
+
         isMinigameActive = false;
 
         // Incrementa el contador de minijuegos completados
@@ -137,6 +175,9 @@ public class GameManager : MonoBehaviour
 
     public void FailMinigame()
     {
+        if (currentState != GameState.Playing)
+            return;
+
         isMinigameActive = false;
         playerLives--;
 
@@ -173,11 +214,19 @@ public class GameManager : MonoBehaviour
         {
             currentState = GameState.Paused;
             Time.timeScale = 0;
+            if (pauseScreen != null)
+            {
+                pauseScreen.SetActive(true);
+            }
         }
         else if (currentState == GameState.Paused)
         {
             currentState = GameState.Playing;
             Time.timeScale = gameSpeed;
+            if (pauseScreen != null)
+            {
+                pauseScreen.SetActive(false);
+            }
         }
     }
 
