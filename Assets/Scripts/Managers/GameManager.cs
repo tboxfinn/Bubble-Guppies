@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Settings")]
     public int playerLives = 3;
     public float gameSpeed = 1.0f;
+    public float maxGameSpeed = 3.0f;
 
     [Header("UI Settings")]
     public GameObject gameOverScreen;
@@ -207,7 +208,7 @@ public class GameManager : MonoBehaviour
         if (minigamesCompleted % minigamesBeforeReduction == 0)
         {
             minigameDuration = Mathf.Max(minigameDurationMinimum, minigameDuration - minigameDurationReduction); // Asegura que la duración no sea menor a minigameDurationMinimum
-            gameSpeed += minigameSpeedIncrease; // Incrementa la velocidad del juego
+            gameSpeed = Mathf.Min(maxGameSpeed, gameSpeed + minigameSpeedIncrease); // Incrementa la velocidad del juego
             Time.timeScale = gameSpeed; // Ajusta la escala de tiempo global
         }
 
