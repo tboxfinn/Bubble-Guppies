@@ -38,6 +38,8 @@ AudioMixerController:
     name: MusicPitch
   - guid: 34895fcb55a99ed47ba3893384ddd024
     name: SFXVol
+  - guid: 16d0bdb82d789c44fa1a8215b5719ea3
+    name: SFXPitch
   m_AudioMixerGroupViews:
   - guids:
     - d44b7809163aa4f47aa45378ba39aecf

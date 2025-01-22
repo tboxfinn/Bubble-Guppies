@@ -285,9 +285,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 15883a7412f22aa45a99de4da1dbe1ed, type: 2}
-  increasePitchButton: {fileID: 785062401}
-  pitchIncrement: 0.5
-  maxPitch: 3
+  increaseMusicPitchButton: {fileID: 785062401}
+  MusicpitchIncrement: 0.5
+  MusicmaxPitch: 3
+  minSFXPitch: 0.8
+  maxSFXPitch: 1.2
+  randomPitchInterval: 1
 --- !u!4 &209581517
 Transform:
   m_ObjectHideFlags: 0
@@ -319,7 +322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &368097649
 AudioSource:
   m_ObjectHideFlags: 0
@@ -703,7 +706,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
