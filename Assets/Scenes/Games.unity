@@ -2564,6 +2564,7 @@ MonoBehaviour:
   shakeThreshold: 25
   requiredShakeAmount: 4000
   currentShakeAmount: 0
+  shakeFrequency: 40
 --- !u!1 &979665987
 GameObject:
   m_ObjectHideFlags: 0

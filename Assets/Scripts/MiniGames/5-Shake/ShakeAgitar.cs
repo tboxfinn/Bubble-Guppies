@@ -11,6 +11,8 @@ public class ShakeAgitar : MinigamesBase
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
+    [SerializeField] private float shakeFrequency = 2.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,11 +33,15 @@ public class ShakeAgitar : MinigamesBase
                 currentShakeAmount += (shakeSpeed * Time.deltaTime) * 0.2f;
                 Debug.Log("Current Shake Amount: " + currentShakeAmount);
 
-                float shakeAmount = Mathf.Sin(Time.time * shakeSpeed) * 0.1f;
-                transform.localPosition = originalPosition + new Vector3(shakeAmount, shakeAmount, 0.0f);
+                float shakeAmountX = Mathf.Sin(Time.time * shakeFrequency) * 0.05f; // Menos agitación en X
+                float shakeAmountY = Mathf.Sin(Time.time * shakeFrequency) * 0.2f;  // Más agitación en Y
+                float shakeAmountZ = Mathf.Sin(Time.time * shakeFrequency) * 0.05f; // Menos agitación en Z
+                transform.localPosition = originalPosition + new Vector3(shakeAmountX, shakeAmountY, shakeAmountZ);
 
-                float rotationAmount = Mathf.Sin(Time.time * shakeSpeed) * 5.0f;
-                transform.localRotation = originalRotation * Quaternion.Euler(0.0f, 0.0f, rotationAmount);
+                float rotationAmountX = Mathf.Sin(Time.time * shakeFrequency) * 1.0f; // Menos rotación en X
+                float rotationAmountY = Mathf.Sin(Time.time * shakeFrequency) * 2.0f; // Más rotación en Y
+                float rotationAmountZ = Mathf.Sin(Time.time * shakeFrequency) * 5.0f; // Menos rotación en Z
+                transform.localRotation = originalRotation * Quaternion.Euler(rotationAmountX, rotationAmountY, rotationAmountZ);
             }
 
             lastMousePosition = Input.mousePosition;
@@ -47,8 +53,9 @@ public class ShakeAgitar : MinigamesBase
         }
         else
         {
-            // Restablece la posición original cuando no se está agitando
+            // Restablece la posición y rotación original cuando no se está agitando
             transform.localPosition = originalPosition;
+            transform.localRotation = originalRotation;
         }
     }
 
@@ -69,6 +76,7 @@ public class ShakeAgitar : MinigamesBase
         isShaking = false;
         currentShakeAmount = 0.0f;
         transform.localPosition = originalPosition;
+        transform.localRotation = originalRotation;
     }
 
     private void CompleteMinigame()
