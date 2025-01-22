@@ -523,6 +523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4-Tapioca
       objectReference: {fileID: 0}
+    - target: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1398858503861736945, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_Radius
       value: 0.3711963
@@ -1765,6 +1769,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 711032288953589627, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 711032288953589627, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 711032288953589627, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3408298688975804098, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3400,6 +3416,7 @@ MonoBehaviour:
   delayBetweenMinigames: 2
   playerLives: 3
   gameSpeed: 1
+  maxGameSpeed: 3
   gameOverScreen: {fileID: 38510307}
   pauseScreen: {fileID: 1084199251}
   settingsScreen: {fileID: 1257992832}
