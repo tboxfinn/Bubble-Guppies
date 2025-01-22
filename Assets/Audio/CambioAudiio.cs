@@ -1,14 +1,14 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class CambioAudiio : MonoBehaviour
+public class CambioAudio : MonoBehaviour
 {
-
-
-    public AudioSource audioSource;
-    public Button increasePitchButton;
-    public float pitchIncrement = 0.5f;
-    public float maxPitch = 3.0f;
+    public AudioMixer audioMixer; 
+    public Button increasePitchButton; 
+    public float pitchIncrement = 0.5f; 
+    public float maxPitch = 3.0f; 
+    private float currentPitch = 1.0f; 
 
     void Start()
     {
@@ -18,16 +18,23 @@ public class CambioAudiio : MonoBehaviour
         }
         else
         {
-            Debug.LogError("El botÛn no est· asignado en el Inspector.");
+            Debug.LogError("El bot√≥n no est√° asignado en el Inspector.");
         }
     }
 
     void IncreasePitch()
     {
-        if (audioSource != null && audioSource.pitch < maxPitch)
+        if (audioMixer != null)
         {
-            audioSource.pitch += pitchIncrement;
+            if (currentPitch < maxPitch)
+            {
+                currentPitch += pitchIncrement;
+                audioMixer.SetFloat("MusicPitch", currentPitch); 
+            }
+        }
+        else
+        {
+            Debug.LogError("El AudioMixer no est√° asignado.");
         }
     }
-
 }
