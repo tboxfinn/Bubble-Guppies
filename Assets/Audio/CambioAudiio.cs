@@ -7,9 +7,9 @@ public class CambioAudio : MonoBehaviour
     //Pitch de la musica
     public AudioMixer audioMixer; 
     public Button increaseMusicPitchButton; 
-    public float MusicpitchIncrement = 0.5f; 
-    public float MusicmaxPitch = 3.0f; 
-    private float MusiccurrentPitch = 1.0f; 
+    public float MusicPitchIncrement = 0.5f; 
+    public float MusicMaxPitch = 3.0f; 
+    private float MusicCurrentPitch = 1.0f; 
 
     //Pitch del SFX
     public float minSFXPitch = 0.8f;
@@ -63,10 +63,10 @@ public class CambioAudio : MonoBehaviour
     {
         if (audioMixer != null)
         {
-            if (MusiccurrentPitch < MusicmaxPitch)
+            if (MusicCurrentPitch < MusicMaxPitch)
             {
-                MusiccurrentPitch += MusicpitchIncrement;
-                audioMixer.SetFloat("MusicPitch", MusiccurrentPitch); 
+                MusicCurrentPitch += MusicPitchIncrement;
+                audioMixer.SetFloat("MusicPitch", MusicCurrentPitch); 
             }
         }
         else
