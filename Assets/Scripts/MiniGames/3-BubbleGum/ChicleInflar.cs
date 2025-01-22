@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ChicleInflar : MonoBehaviour, IMinigame
+
+public class ChicleInflar : MinigamesBase
 {
     [SerializeField] private bool isGrowing = false;
     public float growthRate = 0.1f;
@@ -21,17 +23,17 @@ public class ChicleInflar : MonoBehaviour, IMinigame
         }
     }
 
-    void OnMouseDown()
+    public override void OnPointerDown(PointerEventData eventData)
     {
         isGrowing = true;
     }
 
-    void OnMouseUp()
+    public override void OnPointerUp(PointerEventData eventData)
     {
         isGrowing = false;
     }
 
-    public void ResetMinigame()
+    public override void ResetMinigame()
     {
         isGrowing = false;
         transform.localScale = Vector3.one;

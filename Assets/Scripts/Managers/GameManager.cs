@@ -4,7 +4,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager instance;
+    public static GameManager instance;
+
     public enum GameState
     {
         Playing,
@@ -35,6 +36,9 @@ public class GameManager : MonoBehaviour
     [Header("Key Bindings")]
     public KeyCode pauseKey = KeyCode.Escape;
     
+    [Header("PopUps")]
+    public PopUpManager popUpManager;
+
     [SerializeField] private GameState currentState = GameState.Playing;
     [SerializeField] private float minigameTimer;
     private bool isMinigameActive = false;
@@ -43,6 +47,18 @@ public class GameManager : MonoBehaviour
     private int minigamesCompleted = 0;
 
 #region GameStart
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        
         void Start()
         {
             InitializeGame();
@@ -131,7 +147,7 @@ public class GameManager : MonoBehaviour
         {
             // Desactiva el minijuego anterior y lo reinicia
             minigames[currentMinigameIndex].SetActive(false);
-            IMinigame minigame = minigames[currentMinigameIndex].GetComponentInChildren<IMinigame>();
+            MinigamesBase minigame = minigames[currentMinigameIndex].GetComponentInChildren<MinigamesBase>();
             if (minigame != null)
             {
                 minigame.ResetMinigame();
@@ -147,12 +163,24 @@ public class GameManager : MonoBehaviour
         // Actualiza el índice del último minijuego
         lastMinigameIndex = currentMinigameIndex;
 
+        MinigamesBase currentMinigame = minigames[currentMinigameIndex].GetComponentInChildren<MinigamesBase>();
+        if (popUpManager != null && currentMinigame != null)
+        {
+            Debug.Log("Showing PopUp");
+            popUpManager.ShowPopUp(currentMinigame.instructionImage);
+        }
+
         StartCoroutine(StartMinigameAfterDelay(delayBetweenMinigames));
     }
 
     private IEnumerator StartMinigameAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
+        if (popUpManager != null)
+        {
+            popUpManager.HidePopUp();
+        }
 
         // Activa el siguiente minijuego
         minigames[currentMinigameIndex].SetActive(true);

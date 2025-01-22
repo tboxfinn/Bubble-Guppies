@@ -1,16 +1,32 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopUpManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject popUpPrefab; // Prefab del pop-up
+    [SerializeField] private GameObject currentPopUp;
+    public Transform popUpParent; // Parent del pop-up
+
+    // Método para mostrar el pop-up con una imagen
+    public void ShowPopUp(Sprite image)
     {
-        
+        if (popUpPrefab != null)
+        {
+            currentPopUp = Instantiate(popUpPrefab, popUpParent);
+            Image popUpImage = currentPopUp.GetComponentInChildren<Image>();
+            if (popUpImage != null)
+            {
+                popUpImage.sprite = image;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Método para ocultar el pop-up
+    public void HidePopUp()
     {
-        
+        if (currentPopUp != null)
+        {
+            Destroy(currentPopUp);
+        }
     }
 }
