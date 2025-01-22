@@ -135,10 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 8-TextBubble
       objectReference: {fileID: 0}
-    - target: {fileID: 631167954952208903, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1470395115455982929, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1658990528}
     - target: {fileID: 1842451321378920856, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -184,6 +184,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+--- !u!1 &2297642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 631167954952208903, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+  m_PrefabInstance: {fileID: 2297641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &12052723
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1398858503861736945, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_Radius
@@ -965,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631167954952208903, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1582,7 +1587,7 @@ Transform:
   m_GameObject: {fileID: 590098972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.89049, y: -1.9, z: -0.6252775}
+  m_LocalPosition: {x: 0.89049, y: -13.33, z: -0.6252775}
   m_LocalScale: {x: 10.74, y: 10.74, z: 10.74}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1827,7 +1832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583756443318758176, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5854094988079377402, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3408,6 +3413,7 @@ MonoBehaviour:
   - {fileID: 629233958}
   - {fileID: 1789811530}
   - {fileID: 330079554}
+  - {fileID: 2297642}
   minigameDuration: 10
   minigameSpeedIncrease: 0.2
   minigameDurationReduction: 0.5
