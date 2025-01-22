@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 8-TextBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 631167954952208903, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -415,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -553,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 10-GiantBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 631167954952208903, guid: 834655a1b20a4274b9452d7d3424a6f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: 834655a1b20a4274b9452d7d3424a6f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -617,7 +625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 967005242227662203, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4056763529654764052, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583756443318758176, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4243929562826828281, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1069,7 +1077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631167954952208903, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1215,7 +1223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631167954952208903, guid: 48be1d960d447bb409df20ab961b72be, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: 48be1d960d447bb409df20ab961b72be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1282,6 +1290,10 @@ PrefabInstance:
     - target: {fileID: 631167954952208903, guid: 4bb2e865f4643504cb569f38a3556c67, type: 3}
       propertyPath: m_Name
       value: 9-PlasticBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 631167954952208903, guid: 4bb2e865f4643504cb569f38a3556c67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: 4bb2e865f4643504cb569f38a3556c67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1377,6 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd0b8c735a13214d8c28562ad7b252b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
   minigames:
   - {fileID: 1765955847}
   - {fileID: 510892317}
@@ -1400,7 +1413,7 @@ MonoBehaviour:
   livesText: {fileID: 1483051744}
   timerText: {fileID: 1926892195}
   pauseKey: 27
-  currentState: 1
+  currentState: 0
   minigameTimer: 0
 --- !u!1 &1483051741
 GameObject:
@@ -1933,7 +1946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4255912243943847940, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6376287020966030004, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
