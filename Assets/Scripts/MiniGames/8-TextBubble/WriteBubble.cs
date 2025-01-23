@@ -7,10 +7,10 @@ public class WriteBubble : MinigamesBase
 {
     public TMP_Text bubbleText;
     public int keyPressCount = 0;
-    public int requiredKeyPresses = 100;
+    public int requiredKeyPresses = 50;
     private string playerInput = "";
-    private int maxCharsPerLine = 33;
-    private int maxRequiredKeyPresses = 275;
+    private int maxCharsPerLine = 27;
+    [SerializeField] private int maxRequiredKeyPresses = 200;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject settingsScreen;
     public TMP_Text livesText;
     public TMP_Text timerText;
+    public TMP_Text scoreText;
 
     [Header("Key Bindings")]
     public KeyCode pauseKey = KeyCode.Escape;
@@ -50,8 +51,9 @@ public class GameManager : MonoBehaviour
     private int currentMinigameIndex = -1;
     private int lastMinigameIndex = -1;
     public int minigamesCompleted = 0;
+    public int score = 0;
 
-#region GameStart
+#region Game Manager Initialization
         private void Awake()
         {
             if (instance == null)
@@ -80,6 +82,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = gameSpeed; // Ajusta la escala de tiempo global
             
             UpdateLivesText();
+            UpdateScoreText();
     
             StartNextMinigame();
         }
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
         {
             // Restablece las variables del juego a sus valores iniciales
             playerLives = 3;
+            score = 0;
             gameSpeed = 1.0f;
             minigameDuration = 10.0f;
             minigamesCompleted = 0;
@@ -117,6 +121,7 @@ public class GameManager : MonoBehaviour
     
             // Actualiza la UI
             UpdateLivesText();
+            UpdateScoreText();
     
             // Inicia el primer minijuego
             StartNextMinigame();
@@ -143,60 +148,65 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void StartNextMinigame()
-    {
-        if (currentState != GameState.Playing)
-            return;
-        
-        if (currentMinigameIndex >= 0)
+#region Game Start
+        public void StartNextMinigame()
         {
-            // Desactiva el minijuego anterior y lo reinicia
-            minigames[currentMinigameIndex].SetActive(false);
-            MinigamesBase minigame = minigames[currentMinigameIndex].GetComponentInChildren<MinigamesBase>();
-            if (minigame != null)
+            if (currentState != GameState.Playing)
+                return;
+            
+            if (currentMinigameIndex >= 0)
             {
-                minigame.ResetMinigame();
+                // Desactiva el minijuego anterior y lo reinicia
+                minigames[currentMinigameIndex].SetActive(false);
+                MinigamesBase minigame = minigames[currentMinigameIndex].GetComponentInChildren<MinigamesBase>();
+                if (minigame != null)
+                {
+                    minigame.ResetMinigame();
+                }
             }
+    
+            // Selecciona un nuevo minijuego que no sea el mismo que el anterior
+            do
+            {
+                currentMinigameIndex = Random.Range(0, minigames.Length);
+            } while (currentMinigameIndex == lastMinigameIndex);
+    
+            // Actualiza el índice del último minijuego
+            lastMinigameIndex = currentMinigameIndex;
+    
+            MinigamesBase currentMinigame = minigames[currentMinigameIndex].GetComponentInChildren<MinigamesBase>();
+            if (popUpManager != null && currentMinigame != null)
+            {
+                Debug.Log("Showing PopUp");
+                popUpManager.ShowPopUp(currentMinigame.instructionImage, currentMinigame.instructionText);
+                
+                bubbleParticles.Play();
+                //AudioManager.instance.PlaySound(bubblePopSound);
+            }
+    
+            StartCoroutine(StartMinigameAfterDelay(delayBetweenMinigames));
         }
-
-        // Selecciona un nuevo minijuego que no sea el mismo que el anterior
-        do
+    
+        private IEnumerator StartMinigameAfterDelay(float delay)
         {
-            currentMinigameIndex = Random.Range(0, minigames.Length);
-        } while (currentMinigameIndex == lastMinigameIndex);
-
-        // Actualiza el índice del último minijuego
-        lastMinigameIndex = currentMinigameIndex;
-
-        MinigamesBase currentMinigame = minigames[currentMinigameIndex].GetComponentInChildren<MinigamesBase>();
-        if (popUpManager != null && currentMinigame != null)
-        {
-            Debug.Log("Showing PopUp");
-            popUpManager.ShowPopUp(currentMinigame.instructionImage);
+            yield return new WaitForSeconds(delay);
+    
+            if (popUpManager != null)
+            {
+                popUpManager.HidePopUp();
+            }
+    
+            // Activa el siguiente minijuego
+            minigames[currentMinigameIndex].SetActive(true);
+    
+            // Reinicia el temporizador y activa el estado del minijuego
+            minigameTimer = minigameDuration;
+            isMinigameActive = true;
+    
+            // Actualiza el texto del temporizador en la UI con una décima
+            timerText.text = minigameTimer.ToString("F1");
         }
-
-        StartCoroutine(StartMinigameAfterDelay(delayBetweenMinigames));
-    }
-
-    private IEnumerator StartMinigameAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        if (popUpManager != null)
-        {
-            popUpManager.HidePopUp();
-        }
-
-        // Activa el siguiente minijuego
-        minigames[currentMinigameIndex].SetActive(true);
-
-        // Reinicia el temporizador y activa el estado del minijuego
-        minigameTimer = minigameDuration;
-        isMinigameActive = true;
-
-        // Actualiza el texto del temporizador en la UI con una décima
-        timerText.text = minigameTimer.ToString("F1");
-    }
+#endregion
 
     public void CompleteMinigame()
     {
@@ -208,6 +218,10 @@ public class GameManager : MonoBehaviour
         // Incrementa el contador de minijuegos completados
         minigamesCompleted++;
 
+        int scoreIncrement = Mathf.CeilToInt(10 * gameSpeed);
+        score += scoreIncrement;
+        UpdateScoreText();
+
         // Reduce la duración del minijuego después de un cierto número de minijuegos completados
         if (minigamesCompleted % minigamesBeforeReduction == 0)
         {
@@ -215,9 +229,6 @@ public class GameManager : MonoBehaviour
             gameSpeed = Mathf.Min(maxGameSpeed, gameSpeed + minigameSpeedIncrease); // Incrementa la velocidad del juego
             Time.timeScale = gameSpeed; // Ajusta la escala de tiempo global
         }
-
-        bubbleParticles.Play();
-        //AudioManager.instance.PlaySound(bubblePopSound);
 
         // Inicia el siguiente minijuego
         StartNextMinigame();
@@ -284,7 +295,15 @@ public class GameManager : MonoBehaviour
 
     private void UpdateLivesText()
     {
-        livesText.text = "Lives: " + playerLives;
+        livesText.text = "Lives: " + "\n" + playerLives;
+    }
+
+    private void UpdateScoreText()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + "\n" + score;
+        }
     }
 
     public void ResumeGame()

@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 // Clase base para todos los minijuegos, implementa varias interfaces de eventos de Unity
 public class MinigamesBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler
 {
     // Imagen de instrucciones para el minijuego
     public Sprite instructionImage;
+
+    [TextArea(3, 10)]
+    public string instructionText;
 
     // Prefabs de efectos que pueden ser utilizados en el minijuego
     public GameObject[] effectPrefabs;
