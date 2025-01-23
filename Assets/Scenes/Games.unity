@@ -1030,6 +1030,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+--- !u!1 &333645875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 631167954952208903, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+  m_PrefabInstance: {fileID: 330079553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &349223414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3360,6 +3365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigames:
   - {fileID: 295056176}
+  - {fileID: 1975603512}
+  - {fileID: 333645875}
   - {fileID: 631167954115424003}
   - {fileID: 2297642}
   minigameDuration: 10
@@ -5377,6 +5384,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927661191}
   m_CullTransparentMesh: 1
+--- !u!1 &1975603512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+  m_PrefabInstance: {fileID: 191791706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1984059021
 GameObject:
   m_ObjectHideFlags: 0
