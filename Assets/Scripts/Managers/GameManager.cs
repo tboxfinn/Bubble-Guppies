@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     private bool isMinigameActive = false;
     private int currentMinigameIndex = -1;
     private int lastMinigameIndex = -1;
-    private int minigamesCompleted = 0;
+    public int minigamesCompleted = 0;
 
 #region GameStart
         private void Awake()
