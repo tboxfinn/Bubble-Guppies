@@ -49,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -73,7 +73,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SparkleNoise:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7d9daea12a2e54f4cbf3bb83f68fa3a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -124,11 +124,11 @@ Material:
     - _RimPower: 20
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SnowDepth: 2
-    - _SnowHeight: 1.01
+    - _SnowDepth: -0.42
+    - _SnowHeight: 0.72
     - _SnowNormalStrength: 0.3
-    - _SnowTextureOpacity: 0.784
-    - _SnowTextureScale: 0.08
+    - _SnowTextureOpacity: 0.907
+    - _SnowTextureScale: 0.51
     - _SparkCutoff: 0.6
     - _SparkleScale: 0.26
     - _SpecularHighlights: 1
@@ -142,10 +142,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PathColorIn: {r: 0.3484336, g: 0.3484336, b: 0.5471698, a: 1}
+    - _PathColorIn: {r: 0.19958171, g: 0.19958171, b: 0.6509434, a: 1}
     - _PathColorOut: {r: 0.5, g: 0.5, b: 0.7, a: 1}
     - _RimColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ShadowColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ShadowColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
