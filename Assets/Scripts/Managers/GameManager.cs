@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
     [Header("PopUps")]
     public PopUpManager popUpManager;
 
+    [Header("Effects")]
+    public ParticleSystem bubbleParticles;
+    public AudioClip bubblePopSound;
+
     [SerializeField] private GameState currentState = GameState.Playing;
     [SerializeField] private float minigameTimer;
     private bool isMinigameActive = false;
@@ -211,6 +215,9 @@ public class GameManager : MonoBehaviour
             gameSpeed = Mathf.Min(maxGameSpeed, gameSpeed + minigameSpeedIncrease); // Incrementa la velocidad del juego
             Time.timeScale = gameSpeed; // Ajusta la escala de tiempo global
         }
+
+        bubbleParticles.Play();
+        //AudioManager.instance.PlaySound(bubblePopSound);
 
         // Inicia el siguiente minijuego
         StartNextMinigame();
