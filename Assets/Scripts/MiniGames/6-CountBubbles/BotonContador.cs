@@ -2,23 +2,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class BotonContador : MinigamesBase
 {
     public GameObject bubblePrefab;
-    public int numberOfBubbles = 20;
-    public List<Color> bubbleColors;
-    public Button countButton;
-    public Color selectedColor;
-    private List<GameObject> bubbles = new List<GameObject>();
-    private int correctCount = 0;
-    private int playerCount = 0;
+    public int bubblesToGenerate = 10;
+    public List<Material> bubbleMaterials;
+    public Material selectedMaterial;
+    public GameObject bubbleContainer;
+    public int playerCount = 0;
 
     void Start()
     {
-        GenerateBubbles();
-        countButton.onClick.AddListener(CountBubbles);
-        correctCount = CountBubblesOfSelectedColor();
+        
     }
 
     // Update is called once per frame
@@ -27,47 +24,25 @@ public class BotonContador : MinigamesBase
         
     }
 
-    void GenerateBubbles()
-    {
-        for (int i = 0; i < numberOfBubbles; i++)
-        {
-            GameObject bubble = Instantiate(bubblePrefab, GetRandomPosition(), Quaternion.identity);
-            Color randomColor = bubbleColors[Random.Range(0, bubbleColors.Count)];
-            bubble.GetComponent<SpriteRenderer>().color = randomColor;
-            bubbles.Add(bubble);
-        }
-    }
-
-    Vector3 GetRandomPosition()
-    {
-        float x = Random.Range(-5f, 5f);
-        float y = Random.Range(-5f, 5f);
-        return new Vector3(x, y, 0);
-    }
-
-    void CountBubbles()
+    public override void OnPointerDown(PointerEventData eventData)
     {
         playerCount++;
-        if (playerCount == correctCount)
+    }
+
+    void GenerateBubbles()
+    {
+        for (int i = 0; i < bubblesToGenerate; i++)
         {
-            GameManager.instance.CompleteMinigame();
-        }
-        else if (playerCount > correctCount)
-        {
-            GameManager.instance.FailMinigame();
+            GameObject bubble = Instantiate(bubblePrefab, bubbleContainer.transform);
+            Material randomMaterial = bubbleMaterials[Random.Range(0, bubbleMaterials.Count)];
+            bubble.GetComponent<Renderer>().material = randomMaterial;
         }
     }
 
-    int CountBubblesOfSelectedColor()
+    public override void ResetMinigame()
     {
-        int count = 0;
-        foreach (GameObject bubble in bubbles)
-        {
-            if (bubble.GetComponent<SpriteRenderer>().color == selectedColor)
-            {
-                count++;
-            }
-        }
-        return count;
+        playerCount = 0;
+        GenerateBubbles();
     }
+
 }
