@@ -10,6 +10,7 @@ public class WriteBubble : MinigamesBase
     public int requiredKeyPresses = 100;
     private string playerInput = "";
     private int maxCharsPerLine = 33;
+    private int maxRequiredKeyPresses = 275;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,5 +54,7 @@ public class WriteBubble : MinigamesBase
     {
         float gameSpeed = GameManager.instance.gameSpeed;
         requiredKeyPresses = Mathf.CeilToInt(requiredKeyPresses * Mathf.Sqrt(gameSpeed)); // Ajusta la dificultad en función de la raíz cuadrada de gameSpeed
+        requiredKeyPresses = Mathf.CeilToInt(requiredKeyPresses * Mathf.Sqrt(gameSpeed));
+        requiredKeyPresses = Mathf.Min(requiredKeyPresses, maxRequiredKeyPresses); // Limita el valor máximo
     }
 }
