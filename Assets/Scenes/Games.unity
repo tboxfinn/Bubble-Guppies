@@ -1025,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LataRefresco
       objectReference: {fileID: 0}
+    - target: {fileID: 4510212961795535787, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5597,6 +5601,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1658990528}
+    - target: {fileID: 5629025781804992578, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6346992774418840833, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
       propertyPath: m_Name
       value: TextCount
