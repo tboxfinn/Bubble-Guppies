@@ -2130,7 +2130,7 @@ Transform:
   m_GameObject: {fileID: 590098972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.89049, y: -13.33, z: -0.6252775}
+  m_LocalPosition: {x: 0.89049, y: -21.1, z: -0.6252775}
   m_LocalScale: {x: 10.74, y: 10.74, z: 10.74}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11754,10 +11754,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 18750799224620685, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1198243945065026016, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11810,14 +11806,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1351224208}
+    - target: {fileID: 4444689983183721135, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -25.134697
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444689983183721135, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.099072
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444689983183721135, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444689983183721135, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.97233206
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444689983183721135, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.23360322
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444689983183721135, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -27.019
+      objectReference: {fileID: 0}
     - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
       propertyPath: instructionText
-      value: TRACE THE FIGURE
+      value: CLEAN THE PLATE
       objectReference: {fileID: 0}
     - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
       propertyPath: cameraToDeactivate
       value: 
       objectReference: {fileID: 1658990526}
+    - target: {fileID: 8653417777224059481, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ea776e59566721243ba33b8a76a5edd5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
