@@ -1680,7 +1680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 967005242227662203, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4056763529654764052, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5079,6 +5079,7 @@ GameObject:
   - component: {fileID: 1855398742}
   - component: {fileID: 1855398741}
   - component: {fileID: 1855398740}
+  - component: {fileID: 1855398743}
   m_Layer: 0
   m_Name: WrapPapel
   m_TagString: Untagged
@@ -5176,6 +5177,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855398738}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1855398743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855398738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1160e6a708783304b9cd71401021ae65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionImage: {fileID: 0}
+  instructionText: 
+  effectPrefabs: []
+  bubblePrefab: {fileID: 0}
+  rows: 5
+  columns: 5
+  spacing: 1.5
 --- !u!1 &1875828685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,6 +6167,10 @@ PrefabInstance:
     - target: {fileID: 549486707471756641, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
       propertyPath: m_Name
       value: 6-CountBubbles
+      objectReference: {fileID: 0}
+    - target: {fileID: 549486707471756641, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4381432596499877129, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
       propertyPath: m_LocalPosition.x
