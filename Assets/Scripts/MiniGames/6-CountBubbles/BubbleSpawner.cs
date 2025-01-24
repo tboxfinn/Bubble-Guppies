@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System.Collections;
 using TMPro;
+using MoreMountains.Feedbacks;
 
 public class BubbleSpawner : MinigamesBase
 {
@@ -25,6 +26,9 @@ public class BubbleSpawner : MinigamesBase
     private int selectedMaterialCount = 0;
     private bool isCheckingPlayerCount = false;
 
+    [Header("Feedbacks")]
+    public MMFeedbacks buttonClickFeedback;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +44,7 @@ public class BubbleSpawner : MinigamesBase
     public override void OnPointerDown(PointerEventData eventData)
     {
         playerCount++;
+        buttonClickFeedback.PlayFeedbacks();
         UpdatePlayerCountText();
         if (!isCheckingPlayerCount)
         {

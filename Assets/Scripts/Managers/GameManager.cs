@@ -27,13 +27,14 @@ public class GameManager : MonoBehaviour
     public float gameSpeed = 1.0f;
     public float maxGameSpeed = 3.0f;
 
-    [Header("UI Settings")]
+    [Header("UI References")]
     public GameObject gameOverScreen;
     public GameObject pauseScreen;
     public GameObject settingsScreen;
     public TMP_Text livesText;
     public TMP_Text timerText;
     public TMP_Text scoreText;
+    public GameObject mainCamera;
 
     [Header("Key Bindings")]
     public KeyCode pauseKey = KeyCode.Escape;
@@ -198,6 +199,17 @@ public class GameManager : MonoBehaviour
     
             // Activa el siguiente minijuego
             minigames[currentMinigameIndex].SetActive(true);
+
+            // Desactiva la cámara principal si el minijuego es PlayerNieve
+            MinigamesBase currentMinigame = minigames[currentMinigameIndex].GetComponentInChildren<MinigamesBase>();
+            if (currentMinigame is PlayerNieve && mainCamera != null)
+            {
+                mainCamera.SetActive(false);
+            }
+            else if (mainCamera != null)
+            {
+                mainCamera.SetActive(true);
+            }
     
             // Reinicia el temporizador y activa el estado del minijuego
             minigameTimer = minigameDuration;
