@@ -8,6 +8,7 @@ public class SetInteractiveShaderEffects : MonoBehaviour
     RenderTexture rt;
     [SerializeField]
     Transform target;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,7 +18,7 @@ public class SetInteractiveShaderEffects : MonoBehaviour
  
     private void Update()
     {
-        //transform.position = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+        transform.position = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
         Shader.SetGlobalVector("_Position", transform.position);
     }
  
