@@ -9,18 +9,18 @@ public class PlayerNieve : MinigamesBase
     public List<Vector3> circlePoints;
     public List<Vector3> trianglePoints;
     private List<Vector3> figurePoints;
+    private HashSet<int> reachedPoints = new HashSet<int>();
 
-    [SerializeField] private int currentPointIndex = 0;
     [SerializeField] private bool isDrawing = false;
     [SerializeField] private float tolerance = 1f;
     [SerializeField] private LineRenderer lineRenderer;
 
+    [SerializeField] private GameObject cameraToDeactivate;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SelectRandomFigure();
-        DrawPath();
-        TeleportToStart();
+        StartMinigame();
     }
 
     // Update is called once per frame
@@ -53,24 +53,20 @@ public class PlayerNieve : MinigamesBase
         transform.position = new Vector3(worldPosition.x, 0, worldPosition.z);
 
         Debug.Log("Posición del jugador: " + transform.position);
-        Debug.Log("Posición del punto actual: " + figurePoints[currentPointIndex]);
 
-        if (Vector3.Distance(transform.position, figurePoints[currentPointIndex]) < tolerance)
+        for (int i = 0; i < figurePoints.Count; i++)
         {
-            Debug.Log("Punto alcanzado: " + currentPointIndex);
-            currentPointIndex++;
-            if (currentPointIndex >= figurePoints.Count)
+            if (!reachedPoints.Contains(i) && Vector3.Distance(transform.position, figurePoints[i]) < tolerance)
             {
-                Debug.Log("Todos los puntos alcanzados!");
-                isDrawing = false;
-                CheckCompletion();
+                Debug.Log("Punto alcanzado: " + i);
+                reachedPoints.Add(i);
             }
         }
     }
 
     void CheckCompletion()
     {
-        if (currentPointIndex == figurePoints.Count)
+        if (reachedPoints.Count == figurePoints.Count)
         {
             Debug.Log("Figura completada!");
             // Lógica para cuando el jugador completa la figura
@@ -83,7 +79,13 @@ public class PlayerNieve : MinigamesBase
             GameManager.instance.FailMinigame();
         }
 
-        currentPointIndex = 0; // Reinicia el índice de puntos
+        reachedPoints.Clear(); // Reinicia los puntos alcanzados
+
+        if (cameraToDeactivate != null)
+        {
+            Debug.Log("Activando la cámara.");
+            cameraToDeactivate.SetActive(true);
+        }
     }
 
     void SelectRandomFigure()
@@ -119,8 +121,12 @@ public class PlayerNieve : MinigamesBase
             }
             lineRenderer.positionCount = pointsToDraw.Count;
             lineRenderer.SetPositions(pointsToDraw.ToArray());
+            Debug.Log("Dibujando camino con " + pointsToDraw.Count + " puntos.");
         }
-
+        else
+        {
+            Debug.LogWarning("LineRenderer o figurePoints es nulo.");
+        }
     }
 
     void TeleportToStart()
@@ -129,15 +135,30 @@ public class PlayerNieve : MinigamesBase
         {
             Vector3 startPoint = figurePoints[0];
             transform.position = new Vector3(startPoint.x, 0, startPoint.z);
+            Debug.Log("Teletransportando al punto de inicio: " + startPoint);
+        }
+        else
+        {
+            Debug.LogWarning("figurePoints es nulo o está vacío.");
+        }
+    }
+
+    public void StartMinigame()
+    {
+        SelectRandomFigure();
+        DrawPath();
+        TeleportToStart();
+        reachedPoints.Clear(); // Reinicia los puntos alcanzados
+        if (cameraToDeactivate != null)
+        {
+            Debug.Log("Desactivando la cámara.");
+            cameraToDeactivate.SetActive(false);
         }
     }
 
     public override void ResetMinigame()
     {
-        currentPointIndex = 0;
         isDrawing = false;
-        SelectRandomFigure();
-        DrawPath();
-        TeleportToStart();
+        StartMinigame();
     }
 }

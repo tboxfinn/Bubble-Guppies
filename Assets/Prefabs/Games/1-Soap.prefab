@@ -371,6 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1830469017884416386}
   - component: {fileID: 1682121586991140707}
+  - component: {fileID: 3479352852974472717}
   - component: {fileID: 7878527299442734391}
   - component: {fileID: 8884103758122832337}
   m_Layer: 0
@@ -446,6 +447,14 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &3479352852974472717
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153767148177113147}
+  m_Enabled: 1
 --- !u!114 &7878527299442734391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,27 +678,27 @@ MonoBehaviour:
   instructionText: 
   effectPrefabs: []
   squarePoints:
-  - {x: 4, y: 0, z: 4}
-  - {x: 4, y: 0, z: -4}
-  - {x: -4, y: 0, z: -4}
-  - {x: -4, y: 0, z: 4}
-  circlePoints:
-  - {x: 4, y: 0, z: 0}
   - {x: 3, y: 0, z: 3}
-  - {x: 0, y: 0, z: 4}
-  - {x: -3, y: 0, z: 3}
-  - {x: -4, y: 0, z: 0}
-  - {x: -3, y: 0, z: -3}
-  - {x: 0, y: 0, z: -4}
   - {x: 3, y: 0, z: -3}
+  - {x: -3, y: 0, z: -3}
+  - {x: -3, y: 0, z: 3}
+  circlePoints:
+  - {x: 3, y: 0, z: 0}
+  - {x: 2, y: 0, z: 2}
+  - {x: 0, y: 0, z: 3}
+  - {x: -2, y: 0, z: 2}
+  - {x: -3, y: 0, z: 0}
+  - {x: -2, y: 0, z: -2}
+  - {x: 0, y: 0, z: -3}
+  - {x: 2, y: 0, z: -2}
   trianglePoints:
   - {x: 3, y: 0, z: -3}
   - {x: -3, y: 0, z: -3}
   - {x: 0, y: 0, z: 3}
-  currentPointIndex: 0
   isDrawing: 0
   tolerance: 0.5
   lineRenderer: {fileID: 2012374783322872099}
+  cameraToDeactivate: {fileID: 0}
 --- !u!1 &1945608359880876448
 GameObject:
   m_ObjectHideFlags: 0
