@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
     [Header("Effects")]
     public ParticleSystem bubbleParticles;
     public AudioClip bubblePopSound;
+
+    [Header("PitchSettings")]
+    public AudioMixer audioMixer;
+    private float currentPitch = 1.0f;
 
     [SerializeField] private GameState currentState = GameState.Playing;
     [SerializeField] private float minigameTimer;
@@ -218,7 +223,7 @@ public class GameManager : MonoBehaviour
             // Actualiza el texto del temporizador en la UI con una décima
             timerText.text = minigameTimer.ToString("F1");
         }
-#endregion
+    #endregion
 
     public void CompleteMinigame()
     {
@@ -237,14 +242,29 @@ public class GameManager : MonoBehaviour
         // Reduce la duración del minijuego después de un cierto número de minijuegos completados
         if (minigamesCompleted % minigamesBeforeReduction == 0)
         {
-            minigameDuration = Mathf.Max(minigameDurationMinimum, minigameDuration - minigameDurationReduction); // Asegura que la duración no sea menor a minigameDurationMinimum
-            gameSpeed = Mathf.Min(maxGameSpeed, gameSpeed + minigameSpeedIncrease); // Incrementa la velocidad del juego
-            Time.timeScale = gameSpeed; // Ajusta la escala de tiempo global
+            // Asegura que la duración no sea menor a minigameDurationMinimum
+            minigameDuration = Mathf.Max(minigameDurationMinimum, minigameDuration - minigameDurationReduction);
+
+            // Incrementa la velocidad del juego
+            gameSpeed = Mathf.Min(maxGameSpeed, gameSpeed + minigameSpeedIncrease);
+
+            // Ajusta la escala de tiempo global
+            Time.timeScale = gameSpeed;
+
+            //aqui se aumenta el pitch del auio
+            currentPitch = Mathf.Min(1.5f, currentPitch + 0.05f);  // solo va a llegar hasta 1.5 de pitch
+
+            //para agarrar el parametro el pitch de la música
+            if (audioMixer != null)
+            {
+                audioMixer.SetFloat("MusicPitch", currentPitch);
+            }
         }
 
         // Inicia el siguiente minijuego
         StartNextMinigame();
     }
+
 
     public void FailMinigame()
     {

@@ -4481,6 +4481,7 @@ MonoBehaviour:
   popUpManager: {fileID: 513753337}
   bubbleParticles: {fileID: 5009882816308682692}
   bubblePopSound: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 15883a7412f22aa45a99de4da1dbe1ed, type: 2}
   currentState: 0
   minigameTimer: 0
   minigamesCompleted: 0
