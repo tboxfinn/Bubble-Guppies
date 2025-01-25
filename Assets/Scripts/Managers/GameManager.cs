@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text livesText;
     public TMP_Text timerText;
     public TMP_Text scoreText;
+    public TMP_Text highScoreText;
     public GameObject mainCamera;
 
     [Header("Key Bindings")]
@@ -46,6 +48,10 @@ public class GameManager : MonoBehaviour
     public ParticleSystem bubbleParticles;
     public AudioClip bubblePopSound;
 
+    [Header("PitchSettings")]
+    public AudioMixer audioMixer;
+    private float currentPitch = 1.0f;
+
     [SerializeField] private GameState currentState = GameState.Playing;
     [SerializeField] private float minigameTimer;
     private bool isMinigameActive = false;
@@ -53,10 +59,11 @@ public class GameManager : MonoBehaviour
     private int lastMinigameIndex = -1;
     public int minigamesCompleted = 0;
     public int score = 0;
+    private int highScore = 0;
 
-#region Game Manager Initialization
-        private void Awake()
-        {
+    #region Game Manager Initialization
+    private void Awake()
+    {
             if (instance == null)
             {
                 instance = this;
@@ -65,7 +72,7 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }
+    }
         
         void Start()
         {
@@ -84,8 +91,9 @@ public class GameManager : MonoBehaviour
             
             UpdateLivesText();
             UpdateScoreText();
-    
-            StartNextMinigame();
+            LoadHighScore();
+
+        StartNextMinigame();
         }
     
         public void ResetGame()
@@ -218,7 +226,7 @@ public class GameManager : MonoBehaviour
             // Actualiza el texto del temporizador en la UI con una décima
             timerText.text = minigameTimer.ToString("F1");
         }
-#endregion
+    #endregion
 
     public void CompleteMinigame()
     {
@@ -237,14 +245,36 @@ public class GameManager : MonoBehaviour
         // Reduce la duración del minijuego después de un cierto número de minijuegos completados
         if (minigamesCompleted % minigamesBeforeReduction == 0)
         {
-            minigameDuration = Mathf.Max(minigameDurationMinimum, minigameDuration - minigameDurationReduction); // Asegura que la duración no sea menor a minigameDurationMinimum
-            gameSpeed = Mathf.Min(maxGameSpeed, gameSpeed + minigameSpeedIncrease); // Incrementa la velocidad del juego
-            Time.timeScale = gameSpeed; // Ajusta la escala de tiempo global
+            // Asegura que la duración no sea menor a minigameDurationMinimum
+            minigameDuration = Mathf.Max(minigameDurationMinimum, minigameDuration - minigameDurationReduction);
+
+            // Incrementa la velocidad del juego
+            gameSpeed = Mathf.Min(maxGameSpeed, gameSpeed + minigameSpeedIncrease);
+
+            // Ajusta la escala de tiempo global
+            Time.timeScale = gameSpeed;
+
+            //aqui se aumenta el pitch del auio
+            currentPitch = Mathf.Min(1.5f, currentPitch + 0.05f);  // solo va a llegar hasta 1.5 de pitch
+
+            //para agarrar el parametro el pitch de la música
+            if (audioMixer != null)
+            {
+                audioMixer.SetFloat("MusicPitch", currentPitch);
+            }
+        }
+
+        // Comprobamos si el puntaje supera el máximo
+        if (score > highScore)
+        {
+            highScore = score;
+            SaveHighScore();  // Guardamos el nuevo puntaje máximo
         }
 
         // Inicia el siguiente minijuego
         StartNextMinigame();
     }
+
 
     public void FailMinigame()
     {
@@ -316,6 +346,28 @@ public class GameManager : MonoBehaviour
         {
             scoreText.text = "Score: " + "\n" + score;
         }
+    }
+
+    private void UpdateHighScoreText()
+    {
+        if (highScoreText != null)
+        {
+            highScoreText.text = "High Score: " + "\n" + highScore;
+        }
+    }
+
+    // Guardar el puntaje más alto
+    private void SaveHighScore()
+    {
+        PlayerPrefs.SetInt("HighScore", highScore);
+        PlayerPrefs.Save();
+    }
+
+    // Cargar el puntaje más alto
+    private void LoadHighScore()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);  // Default is 0 if not found
+        UpdateHighScoreText();
     }
 
     public void ResumeGame()
