@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -14,6 +15,8 @@ public class PopoteSubir : MinigamesBase
     [SerializeField] private Transform startPosition;
     [SerializeField] private Transform endPosition;
 
+    public MMF_Player playSubir;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +26,7 @@ public class PopoteSubir : MinigamesBase
 
     void Update()
     {
-       
+
     }
 
     public override void OnPointerDown(PointerEventData eventData)
@@ -48,7 +51,7 @@ public class PopoteSubir : MinigamesBase
             {
                 currentSwipes++;
                 Debug.Log("Current Swipes: " + currentSwipes);
-
+                playSubir.PlayFeedbacks();
                 UpdateBolitasPosition();
 
                 if (currentSwipes >= requiredSwipes)
@@ -59,6 +62,10 @@ public class PopoteSubir : MinigamesBase
                 // Reiniciar la posición inicial para el próximo deslizamiento
                 startTouchPosition = currentTouchPosition;
             }
+        }
+        else
+        {
+            playSubir.StopFeedbacks();
         }
     }
 
