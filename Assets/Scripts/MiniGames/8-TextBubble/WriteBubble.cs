@@ -7,6 +7,7 @@ using MoreMountains.Feedbacks;
 public class WriteBubble : MinigamesBase
 {
     public MMF_Player playTecla;
+    public MMF_Player playSaltoLinea;
     public TMP_Text bubbleText;
     public int keyPressCount = 0;
     public int requiredKeyPresses = 50;
@@ -33,6 +34,7 @@ public class WriteBubble : MinigamesBase
             if (playerInput.Length % maxCharsPerLine == 0)
             {
                 playerInput += "\n";
+                playSaltoLinea.PlayFeedbacks();
             }
 
             bubbleText.text = playerInput;
