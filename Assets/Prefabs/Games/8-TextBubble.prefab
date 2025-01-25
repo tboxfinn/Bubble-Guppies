@@ -495,7 +495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1842451321378920856
 Transform:
   m_ObjectHideFlags: 0
@@ -2184,7 +2184,7 @@ MonoBehaviour:
           Amplitude: 0.2
           Frequency: 40
           AmplitudeX: 0
-          AmplitudeY: 2
+          AmplitudeY: 0
           AmplitudeZ: 0
     - rid: 7287042469650497828
       type: {class: MMF_SpringVector3, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
@@ -3154,8 +3154,8 @@ MonoBehaviour:
   playSaltoLinea: {fileID: 5425601368620878033}
   bubbleText: {fileID: 416332607887204502}
   keyPressCount: 0
-  requiredKeyPresses: 40
-  maxRequiredKeyPresses: 175
+  requiredKeyPresses: 35
+  maxRequiredKeyPresses: 125
 --- !u!114 &6588884601457758164
 MonoBehaviour:
   m_ObjectHideFlags: 0
