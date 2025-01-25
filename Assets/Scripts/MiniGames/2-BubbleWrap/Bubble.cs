@@ -26,7 +26,7 @@ public class Bubble : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    void UpdateBubble()
+    public void UpdateBubble()
     {
         if (isPopped)
         {

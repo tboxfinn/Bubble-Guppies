@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,6 +12,7 @@ public class ChicleInflar : MinigamesBase
     public float targetScale;
     public float tolerance = 0.3f;
     public GameObject guideObject;
+    public MMF_Player playInflar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +27,11 @@ public class ChicleInflar : MinigamesBase
         {
             transform.localScale += Vector3.one * growthRate * Time.deltaTime;
             Debug.Log("Current Scale: " + transform.localScale);
+            playInflar.PlayFeedbacks();
+        }
+        else
+        {
+            playInflar.StopFeedbacks();
         }
     }
 
