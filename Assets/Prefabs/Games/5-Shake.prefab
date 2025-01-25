@@ -383,7 +383,7 @@ MonoBehaviour:
           CooldownDuration: 0
           InterruptsOnStop: 1
           NumberOfRepeats: 0
-          RepeatForever: 0
+          RepeatForever: 1
           DelayBetweenRepeats: 1
           PlayCount: 0
           LimitPlayCount: 0
@@ -509,7 +509,7 @@ MonoBehaviour:
           InterruptsOnStop: 1
           NumberOfRepeats: 0
           RepeatForever: 1
-          DelayBetweenRepeats: 0.1
+          DelayBetweenRepeats: 0
           PlayCount: 0
           LimitPlayCount: 0
           MaxPlayCount: 3
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.2
+  m_fontSize: 64.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
