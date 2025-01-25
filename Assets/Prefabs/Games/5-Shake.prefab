@@ -135,6 +135,92 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &3081610975344943366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6693393709970186802}
+  - component: {fileID: 3671510390257286454}
+  - component: {fileID: 1829300906421354647}
+  m_Layer: 0
+  m_Name: lata
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6693393709970186802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081610975344943366}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9103229, z: 0, w: -0.41389877}
+  m_LocalPosition: {x: 0.00000071642, y: 0.015759, z: 0.0000025488}
+  m_LocalScale: {x: 62.914604, y: 131.57227, z: 62.236877}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4261580052041156499}
+  m_LocalEulerAnglesHint: {x: 0, y: -228.9, z: 0}
+--- !u!33 &3671510390257286454
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081610975344943366}
+  m_Mesh: {fileID: -5076798556035486163, guid: 37a806205fce49e4ea7493ed3f392c5d, type: 3}
+--- !u!23 &1829300906421354647
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081610975344943366}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d5f36d4adf35e634293d3335881d8884, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3722838150360742877
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +313,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.15
+  m_fontSize: 64
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -285,7 +371,7 @@ GameObject:
   - component: {fileID: 6131643496550152693}
   - component: {fileID: 2452661109896042244}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: LataRefresco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,9 +387,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.23031221, y: -0.09048989, z: -0.20356382, w: 0.94727486}
   m_LocalPosition: {x: -0.0000001554, y: -0.1, z: -7.21}
-  m_LocalScale: {x: 1.07574, y: 0.71716, z: 1.07574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6693393709970186802}
   m_Father: {fileID: 1842451321378920856}
   m_LocalEulerAnglesHint: {x: -28.241, y: -5.058, z: -22.983}
 --- !u!33 &8802715992372871499
@@ -321,7 +408,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4510212961795535787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -395,6 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  instructionText: SHAKE THE CAN
   effectPrefabs: []
   isShaking: 0
   shakeThreshold: 25
