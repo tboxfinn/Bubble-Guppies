@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 
 public class WrapPaper : MinigamesBase
 {
@@ -14,6 +15,9 @@ public class WrapPaper : MinigamesBase
 
     private List<Bubble> bubbles = new List<Bubble>();
     private int bubblesToPop;
+
+    [Header("Effects")]
+    public MMF_Player bubblePop;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -59,6 +63,8 @@ public class WrapPaper : MinigamesBase
     void HandleBubblePopped()
     {
         bubblesToPop--;
+
+        bubblePop.PlayFeedbacks();
 
         if (bubblesToPop <= 0)
         {
