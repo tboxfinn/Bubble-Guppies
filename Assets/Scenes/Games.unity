@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631167954952208903, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1470395115455982929, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
       propertyPath: m_Camera
@@ -759,10 +759,6 @@ PrefabInstance:
     - target: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_Name
       value: 4-Tapioca
-      objectReference: {fileID: 0}
-    - target: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4693,75 +4689,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1424583133
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 13.466458
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.7453
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.7453
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.89
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.54
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
-      propertyPath: m_Name
-      value: Table2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96d727f9131cdf64988e9a9fe8e91706, type: 3}
 --- !u!1 &1447743601
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,6 +5098,8 @@ GameObject:
   - component: {fileID: 1673905528}
   - component: {fileID: 1673905530}
   - component: {fileID: 1673905529}
+  - component: {fileID: 1673905532}
+  - component: {fileID: 1673905531}
   m_Layer: 5
   m_Name: ScoreTxt
   m_TagString: Untagged
@@ -5300,6 +5229,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673905527}
   m_CullTransparentMesh: 1
+--- !u!114 &1673905531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673905527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a6945b90dcd0c4b81619c0d8b5c283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useTypeWriter: 1
+  startTypewriterMode: 3
+  hideAppearancesOnSkip: 0
+  hideDisappearancesOnSkip: 0
+  triggerEventsOnSkip: 0
+  resetTypingSpeedAtStartup: 1
+  disappearanceOrientation: 0
+  triggerShowedAfterEffectsEnd: 0
+  triggerDisappearedAfterEffectsEnd: 0
+  onTextShowed:
+    m_PersistentCalls:
+      m_Calls: []
+  onTypewriterStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onTextDisappeared:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  onMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  waitForNormalChars: 0.03
+  waitLong: 0.6
+  waitMiddle: 0.2
+  avoidMultiplePunctuationWait: 0
+  waitForNewLines: 1
+  waitForLastCharacter: 1
+  useTypewriterWaitForDisappearances: 1
+  disappearanceWaitTime: 0.015
+  disappearanceSpeedMultiplier: 1
+--- !u!114 &1673905532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673905527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 'Score
+
+    00000
+
+'
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 11400000, guid: 41e6e0fc5db2f1c488a528a3607799b8, type: 2}
+  databaseAppearances: {fileID: 11400000, guid: ea39080a0f729054faf83b8a25cf5c69, type: 2}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 11400000, guid: e33c184aabd622543a736c7d0263ee2a, type: 2}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags:
+  - shake
+  defaultTagsMode: 0
 --- !u!1 &1706797394
 GameObject:
   m_ObjectHideFlags: 0
@@ -11571,4 +11581,3 @@ SceneRoots:
   - {fileID: 2297641}
   - {fileID: 1294705507}
   - {fileID: 229220616}
-  - {fileID: 1424583133}
