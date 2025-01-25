@@ -1330,10 +1330,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5-Shake
       objectReference: {fileID: 0}
-    - target: {fileID: 631167954952208903, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2443,7 +2439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583756443318758176, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5854094988079377402, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
