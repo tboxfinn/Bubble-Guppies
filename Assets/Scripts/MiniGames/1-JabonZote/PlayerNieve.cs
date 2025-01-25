@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using MoreMountains.Feedbacks;
 
 public class PlayerNieve : MinigamesBase
 {
@@ -16,6 +17,9 @@ public class PlayerNieve : MinigamesBase
     [SerializeField] private LineRenderer lineRenderer;
 
     [SerializeField] private GameObject cameraToDeactivate;
+
+    public MMF_Player tallarFeedback;
+    public MMF_Player tocarPuntoFeedback;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +54,8 @@ public class PlayerNieve : MinigamesBase
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         worldPosition.y = 0; // Asegúrate de que el jugador se mueva solo en el plano XZ
 
+        tallarFeedback.PlayFeedbacks();
+
         transform.position = new Vector3(worldPosition.x, 0, worldPosition.z);
 
         Debug.Log("Posición del jugador: " + transform.position);
@@ -58,7 +64,7 @@ public class PlayerNieve : MinigamesBase
         {
             if (!reachedPoints.Contains(i) && Vector3.Distance(transform.position, figurePoints[i]) < tolerance)
             {
-                Debug.Log("Punto alcanzado: " + i);
+                tocarPuntoFeedback.PlayFeedbacks();
                 reachedPoints.Add(i);
             }
         }
