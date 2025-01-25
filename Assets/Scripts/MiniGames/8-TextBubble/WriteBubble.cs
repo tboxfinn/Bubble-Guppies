@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using MoreMountains.Feedbacks;
 
 public class WriteBubble : MinigamesBase
 {
+    public MMF_Player playTecla;
     public TMP_Text bubbleText;
     public int keyPressCount = 0;
     public int requiredKeyPresses = 50;
@@ -26,7 +28,7 @@ public class WriteBubble : MinigamesBase
         {
             playerInput += c;
             keyPressCount++;
-
+            playTecla.PlayFeedbacks();
             // Insert a newline character if the current line exceeds maxCharsPerLine
             if (playerInput.Length % maxCharsPerLine == 0)
             {
