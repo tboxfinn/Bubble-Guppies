@@ -5307,8 +5307,7 @@ MonoBehaviour:
   - size
   defaultDisappearancesTags:
   - fade
-  defaultBehaviorsTags:
-  - shake
+  defaultBehaviorsTags: []
   defaultTagsMode: 0
 --- !u!1 &1706797394
 GameObject:
