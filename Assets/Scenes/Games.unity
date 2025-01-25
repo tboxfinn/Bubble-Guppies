@@ -942,8 +942,8 @@ RectTransform:
   m_GameObject: {fileID: 38510307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -932.4699}
-  m_LocalScale: {x: 0.0030740565, y: 0.0030740565, z: 0.0030740565}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 681119415}
   m_Father: {fileID: 622859761}
@@ -1117,6 +1117,10 @@ PrefabInstance:
     - target: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_Name
       value: 4-Tapioca
+      objectReference: {fileID: 0}
+    - target: {fileID: 631167954952208903, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842451321378920856, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2751,7 +2755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583756443318758176, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5854094988079377402, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3457,8 +3461,8 @@ RectTransform:
   m_GameObject: {fileID: 1084199251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -932.4699}
-  m_LocalScale: {x: 0.0030740565, y: 0.0030740565, z: 0.0030740565}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 12052724}
   - {fileID: 928255531}
@@ -4407,8 +4411,8 @@ RectTransform:
   m_GameObject: {fileID: 1257992832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -932.4699}
-  m_LocalScale: {x: 0.0030740565, y: 0.0030740565, z: 0.0030740565}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 301935526}
   - {fileID: 1214368966}
