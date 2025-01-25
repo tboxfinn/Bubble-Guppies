@@ -1,16 +1,18 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 
 public class ShakeAgitar : MinigamesBase
 {
     [SerializeField] private bool isShaking = false;
     [SerializeField] private float shakeThreshold = 10.0f; // Umbral de velocidad de agitación
-     public float requiredShakeAmount = 4000.0f; // Cantidad de agitación requerida para completar el minijuego
+    public float requiredShakeAmount = 4000.0f; // Cantidad de agitación requerida para completar el minijuego
     [SerializeField] private float currentShakeAmount = 0.0f;
     private Vector3 lastMousePosition;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
-
+    public MMF_Player playShake;
     [SerializeField] private float shakeFrequency = 2.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,6 +32,7 @@ public class ShakeAgitar : MinigamesBase
 
             if (shakeSpeed > shakeThreshold)
             {
+                playShake.PlayFeedbacks();
                 currentShakeAmount += (shakeSpeed * Time.deltaTime) * 0.2f;
                 Debug.Log("Current Shake Amount: " + currentShakeAmount);
 
@@ -54,6 +57,7 @@ public class ShakeAgitar : MinigamesBase
         else
         {
             // Restablece la posición y rotación original cuando no se está agitando
+            playShake.StopFeedbacks();
             transform.localPosition = originalPosition;
             transform.localRotation = originalRotation;
         }
