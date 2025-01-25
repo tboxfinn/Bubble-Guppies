@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 6131643496550152693}
   - component: {fileID: 2452661109896042244}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: LataRefresco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  instructionText: SHAKE THE CAN
   effectPrefabs: []
   isShaking: 0
   shakeThreshold: 25

@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionImage: {fileID: 0}
-  instructionText: TRACE THE FIGURE
+  instructionText: CLEAN THE PLATE
   effectPrefabs: []
   squarePoints:
   - {x: 3, y: 0, z: 3}
@@ -1104,13 +1104,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7465920536784350206}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -25.061, z: 0}
+  m_LocalRotation: {x: -0, y: 0.97233206, z: 0.23360322, w: 0}
+  m_LocalPosition: {x: 0, y: -25.134697, z: -6.099072}
   m_LocalScale: {x: 13.793341, y: 13.793341, z: 13.793341}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1198243945065026016}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -27.019, y: 180, z: 0}
 --- !u!33 &2686261562806523685
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1142,7 +1142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1724080987372072942, guid: ba82caca39a52b74296949e834cd03db, type: 3}
+  - {fileID: 2100000, guid: ea776e59566721243ba33b8a76a5edd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
