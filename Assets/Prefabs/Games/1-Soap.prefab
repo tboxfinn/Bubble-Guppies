@@ -317,7 +317,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.05
+  m_fontSize: 64.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1575,7 +1575,7 @@ MonoBehaviour:
         Timing:
           TimescaleMode: 0
           ExcludeFromHoldingPauses: 0
-          ContributeToTotalDuration: 1
+          ContributeToTotalDuration: 0
           InitialDelay: 0
           CooldownDuration: 0
           InterruptsOnStop: 1
@@ -1643,8 +1643,8 @@ MonoBehaviour:
           ButtonText: Debug Play Sound
         TestStopButton:
           ButtonText: Debug Stop Sound
-        PlayMethod: 0
-        PoolSize: 10
+        PlayMethod: 3
+        PoolSize: 1
         UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
