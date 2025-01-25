@@ -1424,7 +1424,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.6
+  m_fontSize: 65.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2890,7 +2890,7 @@ MonoBehaviour:
         MaxVolume: 1
         MinPitch: 0.74
         MaxPitch: 1.32
-        SfxAudioMixerGroup: {fileID: -3165942800488051908, guid: 7e984f512e89b60468e829489e8883e3, type: 2}
+        SfxAudioMixerGroup: {fileID: 9131486201388634929, guid: 15883a7412f22aa45a99de4da1dbe1ed, type: 2}
         Priority: 128
         PanStereo: 0
         SpatialBlend: 0
