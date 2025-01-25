@@ -300,7 +300,8 @@ MonoBehaviour:
   DebugActive: 0
   InScriptDrivenPause: 0
   FeedbacksList:
-  - rid: 7996152693011251264
+  - rid: 7996152693011251269
+  - rid: 7996152693011251273
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   RestoreInitialValuesOnDisable: 0
@@ -309,13 +310,130 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7996152693011251264
+    - rid: 7996152693011251269
       type: {class: MMF_SquashAndStretch, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
         Active: 1
-        UniqueID: -67529735
+        UniqueID: -260572652
         Label: Squash and Stretch
         OriginalLabel: Squash and Stretch
+        ChannelMode: 0
+        Channel: 0
+        MMChannelDefinition: {fileID: 0}
+        Chance: 100
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          PlayCount: 36
+          LimitPlayCount: 0
+          MaxPlayCount: 3
+          SetPlayCountToZeroOnReset: 0
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        AutomatedTargetAcquisition:
+          Mode: 0
+          ChildIndex: 0
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        UseRange: 0
+        RangeDistance: 5
+        UseRangeFalloff: 0
+        RangeFalloff:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        RemapRangeFalloff: {x: 0, y: 1}
+        AutomaticShakerSetupButton:
+          ButtonText: 
+        Owner: {fileID: 7983013843529061983}
+        DebugActive: 0
+        SquashAndStretchTarget: {fileID: 7051458269038380914}
+        Mode: 0
+        Axis: 3
+        AnimateScaleDuration: 0.2
+        RemapCurveZero: 1
+        RemapCurveOne: 2
+        Offset: 0
+        AnimateCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.35407662
+            value: -0.35042366
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        AllowAdditivePlays: 0
+        DetermineScaleOnPlay: 0
+        DestinationScale: 2
+    - rid: 7996152693011251273
+      type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
+      data:
+        Active: 1
+        UniqueID: 1182616354
+        Label: Sound
+        OriginalLabel: Sound
         ChannelMode: 0
         Channel: 0
         MMChannelDefinition: {fileID: 0}
@@ -380,52 +498,60 @@ MonoBehaviour:
           m_RotationOrder: 4
         RemapRangeFalloff: {x: 0, y: 1}
         AutomaticShakerSetupButton:
-          ButtonText: 
+          ButtonText: Automatic Shaker Setup
         Owner: {fileID: 7983013843529061983}
         DebugActive: 0
-        SquashAndStretchTarget: {fileID: 0}
-        Mode: 0
-        Axis: 3
-        AnimateScaleDuration: 0.2
-        RemapCurveZero: 1
-        RemapCurveOne: 2
-        Offset: 0
-        AnimateCurve:
+        Sfx: {fileID: 8300000, guid: f35c236fc97db4309b80d8b34da60785, type: 3}
+        RandomSfx: []
+        TestPlayButton:
+          ButtonText: Debug Play Sound
+        TestStopButton:
+          ButtonText: Debug Stop Sound
+        PlayMethod: 0
+        PoolSize: 10
+        UseLegacyEventsMode: 0
+        StopSoundOnFeedbackStop: 0
+        MinVolume: 1
+        MaxVolume: 1
+        MinPitch: 1
+        MaxPitch: 1
+        SfxAudioMixerGroup: {fileID: 9131486201388634929, guid: 15883a7412f22aa45a99de4da1dbe1ed, type: 2}
+        Priority: 128
+        PanStereo: 0
+        SpatialBlend: 0
+        DopplerLevel: 1
+        Spread: 0
+        RolloffMode: 0
+        MinDistance: 1
+        MaxDistance: 500
+        UseCustomRolloffCurve: 0
+        CustomRolloffCurve:
           serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.3
-            value: 1.5
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
+          m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        AllowAdditivePlays: 0
-        DetermineScaleOnPlay: 0
-        DestinationScale: 2
+        UseSpatialBlendCurve: 0
+        SpatialBlendCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        UseReverbZoneMixCurve: 0
+        ReverbZoneMixCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        UseSpreadCurve: 0
+        SpreadCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
 --- !u!1 &5629025781804992578
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +586,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 402947361003802}
+  - {fileID: 7051458269038380914}
   m_Father: {fileID: 4381432596499877129}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5221750095042425311
@@ -477,7 +604,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5629025781804992578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -568,6 +695,7 @@ MonoBehaviour:
   spawnAreaMax: {x: 3.5, y: 1.7, z: -4.7}
   playerCount: 0
   selectedMaterial: {fileID: 0}
+  buttonClickFeedback: {fileID: 7983013843529061983}
 --- !u!1 &6246075126998517191
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +875,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.7
+  m_fontSize: 64.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1029,6 +1157,92 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &7317399101610862544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7051458269038380914}
+  - component: {fileID: 8896393476980447138}
+  - component: {fileID: 5665117983688210940}
+  m_Layer: 0
+  m_Name: Modelo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7051458269038380914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317399101610862544}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7040222834204689206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8896393476980447138
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317399101610862544}
+  m_Mesh: {fileID: -5398476151015165417, guid: 766dc9e8018701349851093c241e6ab6, type: 3}
+--- !u!23 &5665117983688210940
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317399101610862544}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 61c31b6ab2aca0749999a54926cc0293, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &9081368872356739012
 GameObject:
   m_ObjectHideFlags: 0
