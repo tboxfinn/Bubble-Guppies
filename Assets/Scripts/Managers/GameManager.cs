@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text livesText;
     public TMP_Text timerText;
     public TMP_Text scoreText;
+    public TMP_Text highScoreText;
     public GameObject mainCamera;
 
     [Header("Key Bindings")]
@@ -58,10 +59,11 @@ public class GameManager : MonoBehaviour
     private int lastMinigameIndex = -1;
     public int minigamesCompleted = 0;
     public int score = 0;
+    private int highScore = 0;
 
-#region Game Manager Initialization
-        private void Awake()
-        {
+    #region Game Manager Initialization
+    private void Awake()
+    {
             if (instance == null)
             {
                 instance = this;
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }
+    }
         
         void Start()
         {
@@ -89,8 +91,9 @@ public class GameManager : MonoBehaviour
             
             UpdateLivesText();
             UpdateScoreText();
-    
-            StartNextMinigame();
+            LoadHighScore();
+
+        StartNextMinigame();
         }
     
         public void ResetGame()
@@ -261,6 +264,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Comprobamos si el puntaje supera el máximo
+        if (score > highScore)
+        {
+            highScore = score;
+            SaveHighScore();  // Guardamos el nuevo puntaje máximo
+        }
+
         // Inicia el siguiente minijuego
         StartNextMinigame();
     }
@@ -336,6 +346,28 @@ public class GameManager : MonoBehaviour
         {
             scoreText.text = "Score: " + "\n" + score;
         }
+    }
+
+    private void UpdateHighScoreText()
+    {
+        if (highScoreText != null)
+        {
+            highScoreText.text = "High Score: " + "\n" + highScore;
+        }
+    }
+
+    // Guardar el puntaje más alto
+    private void SaveHighScore()
+    {
+        PlayerPrefs.SetInt("HighScore", highScore);
+        PlayerPrefs.Save();
+    }
+
+    // Cargar el puntaje más alto
+    private void LoadHighScore()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);  // Default is 0 if not found
+        UpdateHighScoreText();
     }
 
     public void ResumeGame()
