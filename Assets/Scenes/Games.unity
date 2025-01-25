@@ -5255,11 +5255,11 @@ MonoBehaviour:
   - {fileID: 330079554}
   - {fileID: 666046705221188314}
   - {fileID: 2297642}
-  minigameDuration: 10
+  minigameDuration: 12
   minigameSpeedIncrease: 0.2
   minigameDurationReduction: 0.5
   minigameDurationMinimum: 4
-  minigamesBeforeReduction: 3
+  minigamesBeforeReduction: 5
   delayBetweenMinigames: 2
   playerLives: 3
   gameSpeed: 1
