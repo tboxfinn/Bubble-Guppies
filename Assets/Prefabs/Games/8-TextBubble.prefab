@@ -3155,7 +3155,7 @@ MonoBehaviour:
   bubbleText: {fileID: 416332607887204502}
   keyPressCount: 0
   requiredKeyPresses: 35
-  maxRequiredKeyPresses: 150
+  maxRequiredKeyPresses: 125
 --- !u!114 &6588884601457758164
 MonoBehaviour:
   m_ObjectHideFlags: 0

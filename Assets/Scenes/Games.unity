@@ -127,6 +127,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 416332607887204502, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416332607887204502, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416332607887204502, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416332607887204502, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 542260682151079940, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -135,10 +151,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 8-TextBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 631167954952208903, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1470395115455982929, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1658990528}
+    - target: {fileID: 1827901485293652798, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: afd3fe6f423a90f4db5654b7dfc64bbe, type: 2}
     - target: {fileID: 1842451321378920856, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -179,6 +203,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6466046203744822125, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 70ca059801544254e91a96355dc4cfd1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
