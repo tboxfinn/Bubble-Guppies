@@ -262,7 +262,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = gameSpeed;
 
             //aqui se aumenta el pitch del auio
-            currentPitch = Mathf.Min(1.5f, currentPitch + 0.05f);  // solo va a llegar hasta 1.5 de pitch
+            currentPitch = Mathf.Min(1.3f, currentPitch + 0.03f);  // solo va a llegar hasta 1.3 de pitch
 
             //para agarrar el parametro el pitch de la música
             if (audioMixer != null)
