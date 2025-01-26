@@ -13,7 +13,7 @@ public class ShowHighScore : MonoBehaviour
         // mostrarlo en el text del canvas
         if (highScoreText != null)
         {
-            highScoreText.text = "High Score: " + highScore.ToString();
+            highScoreText.text = "HighScore: " + "\n" + highScore.ToString();
         }
     }
 

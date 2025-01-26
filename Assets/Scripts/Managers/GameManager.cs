@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem bubbleParticles;
-    public AudioClip bubblePopSound;
 
     [Header("PitchSettings")]
     public AudioMixer audioMixer;
@@ -56,6 +55,7 @@ public class GameManager : MonoBehaviour
     [Header("Feedbacks")]
     public MMFeedbacks failedGame;
     public MMFeedbacks completedGame;
+    public MMFeedbacks looseEverything;
 
     [SerializeField] private GameState currentState = GameState.Playing;
     [SerializeField] private float minigameTimer;
@@ -322,6 +322,7 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Game Over");
+        looseEverything.PlayFeedbacks();
         Time.timeScale = 1.0f; // Restablece la escala de tiempo
     }
 
