@@ -8161,6 +8161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1-Soap
       objectReference: {fileID: 0}
+    - target: {fileID: 1397982789731227869, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
       propertyPath: cameraToDeactivate
       value: 
