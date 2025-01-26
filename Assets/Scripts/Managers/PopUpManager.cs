@@ -31,7 +31,8 @@ public class PopUpManager : MonoBehaviour
         {
             currentPopUp = Instantiate(popUpPrefab, popUpParent);
             Image popUpImage = currentPopUp.GetComponentInChildren<Image>();
-            TMP_Text popUpInstructionText = currentPopUp.GetComponentInChildren<TMP_Text>();
+            TMP_Text[] popUpTexts = currentPopUp.GetComponentsInChildren<TMP_Text>();
+            
 
             if (popUpImage != null)
             {
@@ -39,7 +40,10 @@ public class PopUpManager : MonoBehaviour
             }
             if (instructionText != null)
             {
-                popUpInstructionText.text = instructionText;
+                foreach (TMP_Text text in popUpTexts)
+                {
+                    text.text = instructionText;
+                }
             }
 
             // Cambio del color del fondo
