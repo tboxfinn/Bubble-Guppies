@@ -5789,7 +5789,7 @@ MonoBehaviour:
   requiredShakeAmount: 4000
   currentShakeAmount: 0
   playShake: {fileID: 8322061653872514365}
-  abrirLata: {fileID: 0}
+  abrirLata: {fileID: 5871945064153602007}
   shakeFrequency: 40
 --- !u!1 &4699717506456743153
 GameObject:
