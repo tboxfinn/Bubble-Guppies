@@ -12,7 +12,11 @@ public class ShakeAgitar : MinigamesBase
     private Vector3 lastMousePosition;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+
+    [Header("Feedbacks")]
     public MMF_Player playShake;
+    public MMF_Player abrirLata;
+
     [SerializeField] private float shakeFrequency = 2.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,6 +55,7 @@ public class ShakeAgitar : MinigamesBase
 
             if (currentShakeAmount >= requiredShakeAmount)
             {
+                abrirLata.PlayFeedbacks();
                 CompleteMinigame();
             }
         }
