@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
             if (popUpManager != null && currentMinigame != null)
             {
                 Debug.Log("Showing PopUp");
-                popUpManager.ShowPopUp(currentMinigame.instructionImage, currentMinigame.instructionText);
+                popUpManager.ShowPopUp(currentMinigame.animationSprites, currentMinigame.instructionText);
                 
                 bubbleParticles.Play();
                 //AudioManager.instance.PlaySound(bubblePopSound);

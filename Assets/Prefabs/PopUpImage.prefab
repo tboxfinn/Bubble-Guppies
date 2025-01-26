@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 3116965257927825928}
   - component: {fileID: 148699394587221574}
   - component: {fileID: 7400341658208458883}
+  - component: {fileID: 5169576130849648210}
   m_Layer: 5
   m_Name: PopUpImage
   m_TagString: Untagged
@@ -349,3 +350,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5169576130849648210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544446586851484321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27297aa275776e4890111c5203c7608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Image: {fileID: 7400341658208458883}
+  m_SpriteArray:
+  - {fileID: 1694927505, guid: 6340601a0282cb540b6a38606dbd71c0, type: 3}
+  - {fileID: 1694927505, guid: 6340601a0282cb540b6a38606dbd71c0, type: 3}
+  m_Speed: 0.1
+  m_Loop: 1
+  m_PlayOnStart: 1

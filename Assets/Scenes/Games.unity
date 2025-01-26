@@ -175,6 +175,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6623037452380572852, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: animationSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623037452380572852, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: instructionImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623037452380572852, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: 'animationSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 383696119, guid: db0ae59e714b7dd4fa82df5e41759379, type: 3}
+    - target: {fileID: 6623037452380572852, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: 'animationSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1997798825, guid: db0ae59e714b7dd4fa82df5e41759379, type: 3}
+    - target: {fileID: 6623037452380572852, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: 'animationSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: -1727765532, guid: db0ae59e714b7dd4fa82df5e41759379, type: 3}
+    - target: {fileID: 6623037452380572852, guid: 4e6e289cc144a1546a2ba40594ed2b78, type: 3}
+      propertyPath: 'instructionImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -745,6 +769,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: animationSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: instructionImages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: 'animationSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: 'animationSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1020403343, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: 'animationSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: 'animationSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: 'instructionImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: 'instructionImages.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1020403343, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6565026595117072111, guid: f0f2b6e66a110d84a887fac8fc9db9b6, type: 3}
+      propertyPath: 'instructionImages.Array.data[2]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1243,6 +1303,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2452661109896042244, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+      propertyPath: animationSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452661109896042244, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+      propertyPath: instructionImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452661109896042244, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+      propertyPath: 'animationSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 2452661109896042244, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+      propertyPath: 'animationSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1020403343, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 2452661109896042244, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+      propertyPath: 'animationSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 2452661109896042244, guid: b9ce36cc3c0aba1429819c9ea2cf314e, type: 3}
+      propertyPath: 'instructionImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1679,6 +1763,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2-BubbleWrap
       objectReference: {fileID: 0}
+    - target: {fileID: 2020494284573859313, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
+      propertyPath: animationSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020494284573859313, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
+      propertyPath: instructionImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020494284573859313, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
+      propertyPath: 'animationSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 2020494284573859313, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
+      propertyPath: 'animationSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1020403343, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 2020494284573859313, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
+      propertyPath: 'animationSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 2020494284573859313, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
+      propertyPath: 'instructionImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
     - target: {fileID: 4056763529654764052, guid: e0d5d0acaa74604448cb0523db291682, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2362,6 +2470,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3-BubbleGum
       objectReference: {fileID: 0}
+    - target: {fileID: 8006540417630928479, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: animationSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006540417630928479, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: instructionImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006540417630928479, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: 'animationSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 8006540417630928479, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: 'animationSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1020403343, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 8006540417630928479, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: 'animationSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 8006540417630928479, guid: ec77a24654af0b544a191d43345ac6fc, type: 3}
+      propertyPath: 'instructionImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9205,6 +9337,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1658990528}
+    - target: {fileID: 8202018760238519194, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: animationSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202018760238519194, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: instructionImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202018760238519194, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: 'animationSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 8202018760238519194, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: 'animationSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1020403343, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 8202018760238519194, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: 'animationSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 8202018760238519194, guid: 2a47ec48619dd794c85508b16effa9bf, type: 3}
+      propertyPath: 'instructionImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9363,6 +9519,30 @@ PrefabInstance:
       propertyPath: cameraToDeactivate
       value: 
       objectReference: {fileID: 1658990526}
+    - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: animationSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: instructionImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: 'animationSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: 'animationSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1020403343, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: 'animationSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 476334100, guid: b723358a95cdaac498c1001501d25e96, type: 3}
+    - target: {fileID: 6416957290246983882, guid: ea2d39eafdc238d4b9f1d48319d2ed83, type: 3}
+      propertyPath: 'instructionImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 677462011, guid: b723358a95cdaac498c1001501d25e96, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

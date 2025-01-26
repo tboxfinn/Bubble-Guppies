@@ -7,6 +7,7 @@ public class MinigamesBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 {
     // Imagen de instrucciones para el minijuego
     public Sprite instructionImage;
+    public Sprite[] animationSprites;
 
     [TextArea(3, 10)]
     public string instructionText;

@@ -25,18 +25,23 @@ public class PopUpManager : MonoBehaviour
     };
 
     // Método para mostrar el pop-up con una imagen
-    public void ShowPopUp(Sprite image, string instructionText)
+    public void ShowPopUp(Sprite[] images, string instructionText)
     {
         if (popUpPrefab != null)
         {
             currentPopUp = Instantiate(popUpPrefab, popUpParent);
-            Image popUpImage = currentPopUp.GetComponentInChildren<Image>();
+            // Image popUpImage = currentPopUp.GetComponentInChildren<Image>();
+            UISpriteAnimation spriteAnimation = currentPopUp.GetComponentInChildren<UISpriteAnimation>();
             TMP_Text[] popUpTexts = currentPopUp.GetComponentsInChildren<TMP_Text>();
             
 
-            if (popUpImage != null)
+            // if (popUpImage != null)
+            // {
+            //     popUpImage.sprite = image;
+            // }
+            if (spriteAnimation != null)
             {
-                popUpImage.sprite = image;
+                spriteAnimation.SetSprites(images);
             }
             if (instructionText != null)
             {
