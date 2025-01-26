@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.Audio;
+using MoreMountains.Feedbacks;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,6 +52,10 @@ public class GameManager : MonoBehaviour
     [Header("PitchSettings")]
     public AudioMixer audioMixer;
     private float currentPitch = 1.0f;
+
+    [Header("Feedbacks")]
+    public MMFeedbacks failedGame;
+    public MMFeedbacks completedGame;
 
     [SerializeField] private GameState currentState = GameState.Playing;
     [SerializeField] private float minigameTimer;
@@ -238,6 +243,8 @@ public class GameManager : MonoBehaviour
         // Incrementa el contador de minijuegos completados
         minigamesCompleted++;
 
+        completedGame.PlayFeedbacks();
+
         int scoreIncrement = Mathf.CeilToInt(10 * gameSpeed);
         score += scoreIncrement;
         UpdateScoreText();
@@ -283,6 +290,7 @@ public class GameManager : MonoBehaviour
 
         isMinigameActive = false;
         playerLives--;
+        failedGame.PlayFeedbacks();
 
         UpdateLivesText();
 
