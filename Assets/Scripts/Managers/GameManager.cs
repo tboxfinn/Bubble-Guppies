@@ -300,6 +300,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            currentPitch = 1.0f;
+
+            if (audioMixer != null)
+            {
+                audioMixer.SetFloat("MusicPitch", currentPitch);
+            }
+
             GameOver();
         }
     }
